@@ -1,0 +1,89 @@
+<body  class="img-fluid" alt="Responsive image" background = "assets/images/bg1.jpg">
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center text-white mb-4"></h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-0">Register</h3>
+                        </div>
+                        <div class="card-body">
+                            <form #RegForm = "ngForm" (ngSubmit)="register(RegForm)" class="form" role="form">
+                             <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control form-control-lg rounded-0" name="name" ngModel #nameUser="ngModel" required pattern = "[a-zA-Z][a-zA-Z]+">
+                                </div>
+                                <div *ngIf="nameUser.touched" >
+									<div *ngIf="nameUser.errors?.required" class = "alert alert-danger"> Name is required
+									</div>
+									<div *ngIf="nameUser.errors?.pattern" class = "alert alert-danger">Invalid!! Name cannot have numbers
+									</div>
+								</div>
+                                 <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control form-control-lg rounded-0" name="email" ngModel #emailUser="ngModel" required pattern="^\w+([\.`]?\w+)*@\w+([\.`]?\w+)*(\.\w{2,3})+$">
+                                    
+                                </div>
+                                <div *ngIf="emailUser.touched" >
+									<div *ngIf="emailUser.errors?.required" class = "alert alert-danger"> Email is required
+									</div>
+									<div *ngIf="emailUser.errors?.pattern" class = "alert alert-danger">Invalid!!
+									</div>
+								</div>
+                                 <div class="form-group">
+                                    <label for="contact">Contact</label>
+                                    <input type="text" class="form-control form-control-lg rounded-0" name="contact" ngModel #contactUser="ngModel" required maxlength="10" minlength="10" pattern = "[0-9]*">
+                                    
+                                </div>
+                                <div *ngIf="contactUser.touched" >
+									<div *ngIf="contactUser.errors?.required" class = "alert alert-danger">Contact is required
+									</div>
+									<div *ngIf="contactUser.errors?.pattern || contactUser.errors?.minlength" class = "alert alert-danger">Invalid Contact!!
+									</div>
+								</div>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" class="form-control form-control-lg rounded-0" name="address"  ngModel #addressUser="ngModel" required>
+                                </div>
+                                <div *ngIf="addressUser.touched" >
+									<div *ngIf="addressUser.errors?.required" class = "alert alert-danger">Address is required
+									</div>
+								</div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control form-control-lg rounded-0" name = "password" ngModel #passwordUser="ngModel" required>
+                                   
+                                </div>
+                                <div *ngIf="passwordUser.touched" >
+									<div *ngIf="passwordUser.errors?.required" class = "alert alert-danger">Password is required
+									</div>
+								</div>
+                                <div class="form-group">
+                                    <label>Re-enter Password</label>
+                                    <input type="password" class="form-control form-control-lg rounded-0" name = "repassword" ngModel #repasswordUser="ngModel" required>
+                                    
+                                </div>
+                                <div *ngIf="repasswordUser.touched" >
+									<div *ngIf="repasswordUser.errors?.required" class = "alert alert-danger">Password is required
+									</div>
+								</div>
+                                <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="RegForm.invalid" (click)="submit(RegForm.value)">Register</button>
+                            </form>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+</body>

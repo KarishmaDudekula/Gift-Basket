@@ -1,0 +1,54 @@
+{{status}}
+
+<body>
+<div class ="bg">
+<div class="container py-8">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center text-white mb-4"></h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+					<br><br><br><br><br><br><br>
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-0">Login</h3>
+                        </div>
+                        <div class="card-body">
+                            <form #LoginForm = "ngForm" class="form" role="form">
+                                 <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control form-control-lg rounded-0" name="email" ngModel #emailUser="ngModel" required pattern="^\w+([\.`]?\w+)*@\w+([\.`]?\w+)*(\.\w{2,3})+$">
+                                </div>
+                                <div *ngIf="emailUser.touched" >
+									<div *ngIf="emailUser.errors?.required" class = "alert alert-danger"> Email is required
+									</div>
+									<div *ngIf="emailUser.errors?.pattern" class = "alert alert-danger">Invalid!!
+									</div>
+								</div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control form-control-lg rounded-0" name ="password"  ngModel #passwordUser="ngModel" required>
+                                </div>
+                                <div *ngIf="passwordUser.touched" >
+									<div *ngIf="passwordUser.errors?.required" class = "alert alert-danger">Password is required
+									</div>
+								</div>
+                                <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="LoginForm.invalid" (click)="submit(LoginForm.value)" >Login</button>
+                            </form>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <br><br><br><br><br><br><br><br><br><br>
+                    <!-- /form card login -->
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+</div>
+<!--/container-->
+</body>

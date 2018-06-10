@@ -1,0 +1,14 @@
+body, html {
+    height: 100%;
+}
+.bg { 
+    /* The image used */
+    background-image: url("https://robyndykstra.com/wp-content/uploads/2017/07/3D-Shopping-Cart-Gifts.jpg");
+
+    /* Full height */
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}  

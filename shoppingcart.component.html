@@ -1,0 +1,13 @@
+<body>
+<div class = "bg">
+<button (click)="back()">Back to Shopping</button>
+<!--<ul>
+	<li *ngFor = "let data of cart">Product name:{{data.productname}} Price {{data.price}}</li>
+</ul>  -->
+
+<ul *ngFor = "let data of cart">Product name:{{data.productname}} 
+Price:{{data.price}}
+<button type="button" class="btn btn-success" (click)="buynow(data.price)">Buy Now</button>
+</ul><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+</body>

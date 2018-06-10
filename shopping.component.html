@@ -1,0 +1,36 @@
+<body>
+<div class = "bg">
+<button type="button" class="btn btn-outline-primary btn-lg" (click)="onClick('birthday')">
+Birthday
+</button>
+<button type="button" class="btn btn-outline-success btn-lg" (click)="onClick('Anniversary')">
+Anniversary
+</button>
+<button type="button" class="btn btn-outline-danger  btn-lg" (click)="onClick('appreciation')">
+Appreciation Gift
+</button>
+<button type="button" class="btn btn-outline-primary btn-lg" (click)="onClick('HouseWarming')">
+House Warming
+</button>
+<button type="button" class="btn btn-outline-success btn-lg" (click)="onClick('Festivals')">
+Festivals
+</button>
+<button type="button" class="btn btn-outline-danger  btn-lg" (click)="onClick('Gifttofriends')">
+Gifts to friends
+</button>
+<button type="button" class="btn btn-outline-info btn-lg" (click)="showCart()">
+Shopping Cart
+</button>
+<div class="row">
+<ul *ngFor = "let a of data">
+<div class = col-md-4 ><img src= "assets/images/{{a.images}}" style="width:200px;height:200px;"></div>
+<br>
+Price : <b><i>Rs.{{a.price}}</i></b>
+<br>
+Description : {{a.description}}
+<br>
+<button type="button" class="btn btn-success" (click)="addtoCart(a)">Add to Cart</button>
+</ul><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+</div>
+</body>

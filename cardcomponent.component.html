@@ -1,0 +1,70 @@
+<body>
+<div class = "bg">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Payment Details
+                    </h3>
+                    <h4>Amount : {{price}}</h4>
+                    
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                    <div class="form-group">
+                        <label for="cardNumber">
+                            CARD NUMBER</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Valid Card Number"
+                                required  name="cardNumber" ngModel #cardNumberUser="ngModel" required maxlength="16" minlength="16" pattern = "[0-9]*" />
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        </div>
+                    </div>
+                    <div *ngIf="cardNumberUser.touched" >
+									<div *ngIf="cardNumberUser.errors?.required" class = "alert alert-danger">Card Number is required
+									</div>
+									<div *ngIf="cardNumberUser.errors?.pattern || cardNumberUser.errors?.minlength" class = "alert alert-danger">Invalid CardNumber!!
+									</div>
+								</div>
+                    <div class="row">
+                        <div class="col-xs-7 col-md-7">
+                            <div class="form-group">
+                                <label for="expityMonth">
+                                    EXPIRY DATE</label>
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input type="text" class="form-control" id="expityMonth" placeholder="MM" required />
+                                </div>
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input type="text" class="form-control" id="expityYear" placeholder="YY" required /></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-5 col-md-5 pull-right">
+                            <div class="form-group">
+                                <label for="cvCode">
+                                    CV CODE</label>
+                                <input type="password" class="form-control" placeholder="CVV" required  name="cvCode" ngModel #cvCodeUser="ngModel" required maxlength="3" minlength="3" pattern = "[0-9]*" />
+                            </div>
+                        </div>
+                        <div *ngIf="cvCodeUser.touched" >
+									<div *ngIf="cvCodeUser.errors?.required" class = "alert alert-danger">CVV is required
+									</div>
+									<div *ngIf="cvCodeUser.errors?.pattern || cvCodeUser.errors?.minlength" class = "alert alert-danger">Invalid CVV!!
+									</div>
+								</div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            
+            <br/>
+            <a class="btn btn-success btn-lg btn-block" role="button" (click)="submit()">Pay</a>
+        </div>
+    </div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+</body>
+            
+
+

@@ -1,0 +1,15 @@
+body, html {
+    height: 100%;
+}
+.bg { 
+    /* The image used */
+    background-image: url("https://previews.123rf.com/images/milkos/milkos1711/milkos171100672/89182872-online-paying-for-christmas-gifts-background-present-credit-card-and-mobile-phone-on-rustic-wood-top.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}  
